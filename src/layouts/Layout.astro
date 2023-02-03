@@ -1,0 +1,28 @@
+---
+import LayoutReact from "./Layout.jsx";
+
+export interface Props {
+  title?: string;
+  head?: Function;
+}
+
+const { title, head } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <LayoutReact title={title} head={head}><slot /></LayoutReact>
+  <style is:global>
+    :root {
+      --accent: 124, 58, 237;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        #da62c4 30%,
+        white 60%
+      );
+    }
+  </style>
+
+
+</html>

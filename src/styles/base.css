@@ -1,0 +1,56 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../../public/assets/font.css";
+
+@layer base {
+  html {
+    font-family: sans-serif, Source Sans Pro;
+    background-color: #f6f6f6;
+  }
+
+  main {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .pixelated {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+
+    /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  img,
+  picture {
+    @apply object-cover object-center w-full h-full !pixelated;
+  }
+}
+
+.max-w-container {
+  @apply !max-w-[1024px];
+}
+
+.w-container {
+  @apply !w-[1024px];
+}
+
+.entry-content {
+  @apply !max-w-full;
+}
