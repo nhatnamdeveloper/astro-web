@@ -2,8 +2,8 @@ const Header = () => (
   <header id="masthead" className=" my-8 font-light">
     <div className="text-zinc-500 hover:text-green-600">
       <p className="text-4xl">
-        <a href={import.meta.env.BASE_URL || "/"} rel="home">
-          R50Time
+        <a href={import.meta.env.BASE_URL || '/'} rel="home">
+          Test
         </a>
       </p>
 

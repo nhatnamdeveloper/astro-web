@@ -1,16 +1,16 @@
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
-import { astroImageTools } from "astro-imagetools";
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
+import image from '@astrojs/image';
+import { astroImageTools } from 'astro-imagetools';
 
 export default defineConfig({
   server: {
     port: 4040,
     host: true,
   },
-  output: "static",
+  output: 'static',
   integrations: [
     tailwind({
       config: {
@@ -19,10 +19,10 @@ export default defineConfig({
     }),
     react(),
     sitemap({
-      canonicalURL: "https://r50time.wordpress.com/",
+      canonicalURL: '',
       serialize(item) {
         if (/\//.test(item.url)) {
-          item.changefreq = "daily";
+          item.changefreq = 'daily';
           item.lastmod = new Date();
           item.priority = 0.9;
         }
@@ -53,8 +53,8 @@ export default defineConfig({
   //   },
   // },
   build: {
-    minify: "esbuild",
+    minify: 'esbuild',
     brotliSize: true,
   },
-  publicDir: "public",
+  publicDir: 'public',
 });
